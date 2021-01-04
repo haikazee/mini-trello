@@ -1,0 +1,49 @@
+// Colors
+
+$brown: #CA9584;
+$dark-brown: #B87A66;
+
+$black: #1D1D1D;
+$light-black: rgba(29, 29, 29, 0.32);
+
+$white: #EDEDED;
+
+$grey: #E5E5E5;
+$dark-grey: #787878;
+
+
+$green: #3E9714;
+$light-green: #D9FBC9;
+$red: #DD4040;
+$blue: #0089D7;
+
+
+body{
+    background-color: $brown;
+    font-family: $font;
+    letter-spacing: 1%;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+h1, .h1 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: auto;
+}
+h2, .h2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 25px;
+}
+h3, .h3 {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.subtitle{
+    font-size: 8px;
+    line-height: 12px;
+}
+
+

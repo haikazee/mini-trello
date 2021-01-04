@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import Layout from './components/layout/Layout'
+import AddCard from './components/ToDo/AddCard'
+import Card from './components/ToDo/Card';
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      showAddCardDiv: false,
+    }
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  showAddCardDivHandler = () => {  this.setState({showAddCardDiv : true})}
+  render(){
+    console.log(this.state.showAddCardDiv);
+    return (
+    <Layout>
+      <Card/>
+      <AddCard showDiv = {this.state.showAddCardDiv} showAddCardDivHandler={this.showAddCardDivHandler}/>
+    </Layout>
+    );
+  }
 }
 
 export default App;
