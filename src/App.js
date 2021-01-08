@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import Layout from './components/layout/Layout'
-import AddCard from './components/ToDo/AddCard'
-import Card from './components/ToDo/Card';
+import Layout from './components/layout/Layout';
+import ToDo from './containers/ToDo/index.jsx';
+
 class App extends Component{
   constructor(props){
     super(props);
@@ -15,8 +15,7 @@ class App extends Component{
     console.log(this.state.showAddCardDiv);
     return (
     <Layout>
-      <Card/>
-      <AddCard showDiv = {this.state.showAddCardDiv} showAddCardDivHandler={this.showAddCardDivHandler}/>
+      <ToDo />
     </Layout>
     );
   }

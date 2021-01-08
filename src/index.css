@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,77 +7,137 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Arial", 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Arial", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #CA9584;
+  background-color: #ca9584;
   letter-spacing: 1%;
   font-size: 10px;
-  color:  #1D1D1D;
+  color: #1d1d1d;
+  overflow: overlay;
   line-height: 12px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
-h1, .h1 {
+h1,
+.h1 {
   font-size: 26px;
   font-weight: bold;
   line-height: 30px;
+  margin: 0;
 }
-h2, .h2 {
-  font-size: 20px;
+h2,
+.h2 {
+  font-size: 18px;
+  margin: 0;
   font-weight: bold;
-  line-height: 25px;
+  line-height: 22px;
 }
-h3, .h3 {
+h3,
+.h3 {
   font-size: 14px;
+  margin: 0;
   line-height: 16px;
 }
 
-.subtitle{
+.subtitle {
   font-size: 8px;
   line-height: 12px;
 }
 
-.form{
-  width: 100%
+.form {
+  width: 100%;
 }
 
-.input{
+.input {
   width: 100%;
   border-radius: 3px;
   border: 1px solid #1d1d1d;
   padding: 5px 7px;
   font-family: inherit;
+  font-size: 12px;
 }
 
+textarea.input {
+  font-size: 14px;
+}
 
-
-.btn{
+.btn {
   background-color: transparent;
   border: none;
   display: flex;
   justify-content: center;
   float: left;
   align-items: center;
-  height: 25px;
-  margin-top: 10px;
+  height: 30px;
+  margin-top: 5px;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
 }
 
-.submit-btn{
+.btn:hover,
+.btn:active,
+.btn:focus {
+  color: white;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.submit-btn {
   width: 85px;
-  height: 25px;
-  background-color: #3E9714;
+  background-color: #3e9714;
   color: white;
   border-radius: 3px;
 }
-.cancel-btn{
+.submit-btn:hover,
+.submit-btn:active,
+.submit-btn:focus {
+  background-color: #307311;
+}
+.cancel-btn {
   margin-left: 10px;
+  padding: 0;
+}
+.cancel-btn:hover,
+.cancel-btn:focus {
+  color: #1d1d1d;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: 1px solid #1d1d1d;
+}
+
+.desc {
+  padding-left: 25px;
+}
+
+.right {
+  float: right;
+}
+
+.modal-wrap .ant-modal-content {
+  border-radius: 3px;
+  background-color: #f4f4f4;
+}
+.ant-form-item:last-child {
+  margin-bottom: 0px;
+}
+
+.ant-checkbox-wrapper {
+  font-size: 12px;
+  color: #787878;
+}
+.ant-checkbox-wrapper .ant-checkbox .ant-checkbox-inner {
+  width: 12px;
+  height: 12px;
+}
+
+#addCardForm .ant-form-item {
+  margin-bottom: 5px;
 }

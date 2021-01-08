@@ -50,13 +50,12 @@ const Layout = props => {
               </Logo>
               <Main>
                 <H1> Board</H1>
-            <Wrap>
-                {props.children}
-            </Wrap>
+                <Wrap>
+                    {props.children}
+                </Wrap>
               </Main>
             </Header>
             </div>
-
         )
    
 }

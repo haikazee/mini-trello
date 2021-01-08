@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
 import './index.css';
 import App from './App';
+// import "antd/dist/antd.css";
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from 'styled-components';
 import firebase from 'firebase/app';
+import { Provider } from 'react-redux';
+import store from './store';
 
 firebase.initializeApp({
   apiKey: "AIzaSyBWipUfR72p8cNG032l0hA_vbcKZO6fUfk",
@@ -22,6 +26,7 @@ const theme = {
  black:  '#1D1D1D',
  lightBlack: 'rgba(29, 29, 29, 0.32)',
  white:  '#EDEDED',
+ primary: '#FFFFFF',
  grey:  '#E5E5E5',
  darkGrey:  '#787878',
  green:  '#3E9714',
@@ -32,9 +37,11 @@ const theme = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-    <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+      <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import addSign from '../../assets/image/add-card-sign.svg'
+import addSign from '../../../assets/image/add-card-sign.svg'
 import { Form, Input, Button } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
+
 const AddCard = props => {
 
     const { TextArea } = Input;
@@ -10,7 +11,7 @@ const AddCard = props => {
     const AddCardDiv = styled.div`
         width: 272px;
         min-height: 45px;
-  
+        margin: 0 5px;
     `;
 
     const AddCardButton = styled.button`
@@ -25,10 +26,8 @@ const AddCard = props => {
         border: none;
         cursor: pointer;
         transition: all 0.15s ease-in-out;
-        margin: 0 5px;
-        :first-child{
-            margin-left: 0;
-        }
+       
+        
         :hover{
             background-color: rgb(29 29 29 / 51%);
         }   
@@ -39,12 +38,13 @@ const AddCard = props => {
     `;
 
     const FormDiv = styled.div`
-        padding: 15px;
+        padding: 5px;
         background-color: ${props => props.theme.grey};
         display: ${props.showDiv ? 'flex' : 'none'};
         flex-direction: row;
         border-radius: 3px;
-        min-height: 125px;
+        min-height: 120px;
+        filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.25));
     `;
 
     // const Form = styled.form `
