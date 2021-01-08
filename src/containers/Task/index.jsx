@@ -12,11 +12,12 @@ class Task extends Component{
     }
 
     render(){
-        let tasks = [];
-        let addTaskBtnText = tasks.length ? 'Add another task' : 'Add a task';
+        const {tasks} = this.props;
+        let addTaskBtnText = tasks && tasks.length ? 'Add another task' : 'Add a task';
+        // let taskList = tasks ? tasks.map(task=> <TaskView task={task}/>) : null;
         return(
             <div>
-                <TaskView/>
+                {/* {taskList} */}
                 <AddTask 
                 text = {addTaskBtnText}
                 />

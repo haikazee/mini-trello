@@ -5,7 +5,7 @@ import Task from '../../Task/index.jsx';
 
 
 const CardWrap = styled.div`
-    width: 272px;
+    min-width: 272px;
     min-height: 45px;
     height: fit-content;
     background-color: ${props => props.theme.grey };
@@ -41,18 +41,23 @@ const CardBody = styled.div`
 `;
 
 const Card = props => {
+    const { card } = props;
+    const { tasks } = card;
+
+    const taskList  = tasks ? (<TaskListCheck>
+        <img src={checkbox} alt="Task List"/>
+        &nbsp;
+        <span> 1/2</span>
+    </TaskListCheck>) : null
+
     return(
         <CardWrap>
               <CardHeader>
-                  <h2>Card 1</h2>
-                    <TaskListCheck>
-                        <img src={checkbox} alt="Task List"/>
-                        &nbsp;
-                        <span> 1/2</span>
-                    </TaskListCheck>
+                  <h2>{card.title}</h2>
+                    {taskList}
               </CardHeader>
               <CardBody>
-                <Task/>
+                <Task tasks={tasks}/>
               </CardBody>
         </CardWrap>
     );

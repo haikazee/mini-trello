@@ -9,13 +9,13 @@ const AddCard = props => {
     const { TextArea } = Input;
 
     const AddCardDiv = styled.div`
-        width: 272px;
+        min-width: 272px;
         min-height: 45px;
-        margin: 0 5px;
+        margin: 0 30px 0 5px;
     `;
 
     const AddCardButton = styled.button`
-        width: 100%;
+        min-width: 100%;
         height: 45px;
         display: ${props.showDiv ? 'none' : 'flex'};
         background-color: ${props => props.theme.lightBlack};
@@ -54,6 +54,7 @@ const AddCard = props => {
 
     const onFinish = values =>{
         console.log(values);
+        props.addCardHandler(values.title);
     }
 
     let cardsList = [];
@@ -72,7 +73,7 @@ const AddCard = props => {
                 >
                     <Form.Item
                         label=""
-                        name="card-title"
+                        name="title"
                         
                         rules={[{ required: true, message: 'Please enter card title.' }]}
                     >

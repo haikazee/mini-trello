@@ -25,8 +25,9 @@ const Image = styled.img`
 `;
 
 const Main = styled.main`
-  margin: 30px;
-  min-height: 50vh;
+  margin: 30px 0 0 30px;
+  min-height: 100vh;
+  overflow: overlay
 `;
 
 const H1 = styled.h1`
@@ -36,6 +37,7 @@ const H1 = styled.h1`
 const Wrap = styled.div`
     margin-top: 30px;
     display: flex;
+    overflow-x: scroll;
     min-height: inherit;
 `;
 
