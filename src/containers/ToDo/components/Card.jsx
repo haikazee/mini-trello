@@ -57,7 +57,7 @@ const Card = props => {
                     {taskList}
               </CardHeader>
               <CardBody>
-                <Task tasks={tasks}/>
+                <Task tasks={tasks} cardId={card.id}/>
               </CardBody>
         </CardWrap>
     );

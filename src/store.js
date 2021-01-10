@@ -6,35 +6,35 @@ import {createSlice, combineReducers, configureStore} from '@reduxjs/toolkit';
 export const Todos = createSlice({
     name: 'todos',
     initialState: {
-        cards: null
+        cards: null,
+        users: null,
+        task: null
     },
     reducers: {
         getCards: (state, {payload}) => {
-            console.log(payload);
+            // console.log(payload);
             state.cards = payload;
         },
+        getTask: (state, {payload}) => {
+            state.task = payload;
+        },
+        getAllUsers: (state, {payload}) => {
+            state.users = payload;
+        }
         
 
     }
 });
 
-const Task = createSlice({
-    name: 'task',
-    initialState: null,
-    reducer: {
-        getTask: (state, {payload}) => {
-            state = payload;
-        }
-    }
-});
+
 
 
 const reducer = combineReducers({
-    todos: Todos.reducer,
-    task: Task.reducer
+    todos: Todos.reducer
+
 })
 
-export const { getCards } = Todos.actions;
+export const { getCards, getTask, getAllUsers } = Todos.actions;
 
 export const store = configureStore({
     reducer: reducer

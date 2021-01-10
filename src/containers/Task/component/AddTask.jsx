@@ -24,7 +24,7 @@ const AddTask = props => {
     `;
 
     return(
-        <AddTaskButton>
+        <AddTaskButton onClick={()=>props.showCardHandler()}>
             + {props.text}
         </AddTaskButton>
     );

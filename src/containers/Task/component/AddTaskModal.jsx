@@ -16,43 +16,39 @@ const AddTaskModal = props => {
 
     const { TextArea } = Input;
     const { Option } = Select;
+    const { users } = props;
+    // console.log(props.users)
 
-    function onChange(value) {
-        console.log(`selected ${value}`);
-      }
+    const onFinish = (values) => {
+        props.addTaskHandler(values);
+    }
 
-    function onBlur() {
-        console.log('blur');
-      }
-      
-      function onFocus() {
-        console.log('focus');
-      }
-      
-      function onSearch(val) {
-        console.log('search:', val);
-      }
-
+    const options = users && users.map(user => user.role === "user" ?
+        <Option value={user.id}>{user.name} </Option> : null
+    )
     return(
         <Modal 
             title="" 
-            visible={true} 
+            visible={props.visible} 
             centered= {true}
             closable= {false}
+            maskClosable={true}
             footer={null}
+            onCancel={()=>props.closeModalHandler()}
             requiredMark={false}
             wrapClassName="modal-wrap"
         >
         <Form
             name="task_detail_form"
-            // onFinish={}
+            onFinish={onFinish}
             hideRequiredMark
+
             colon={false}
             className="task-form form"
         >
             <Form.Item
                 label= {<img src={taskTitle} alt="Task Title"/>}
-                name="task_title"
+                name="title"
               
                 rules={[{ required: true, message: 'Please enter task title.' }]}
 
@@ -66,7 +62,7 @@ const AddTaskModal = props => {
            
             <Form.Item
                 label= ""
-                name="task_desc"
+                name="description"
                 labelCol = {12}
                 className="desc"
                 rules={[{ required: true, message: 'Please enter task title.' }]}
@@ -80,7 +76,7 @@ const AddTaskModal = props => {
             </Form.Item>
             <Form.Item
                 label= {<img src={taskAssignee} alt="Task Assignee"/>}
-                name="task_assignee"
+                name="assignee"
                 rules={[{ required: true, message: 'Please a user to the task.' }]}
 
             >
@@ -89,17 +85,12 @@ const AddTaskModal = props => {
                     style={{ width: 160, marginLeft: 5 }}
                     placeholder="Assign a user"
                     optionFilterProp="children"
-                    onChange={onChange}
-                    onFocus={onFocus}
-                    onBlur={onBlur}
-                    onSearch={onSearch}
+                    // onChange={onChange}
                     filterOption={(input, option) =>
                     option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                 >
-                    <Option value="jack">Jack</Option>
-                    <Option value="lucy">Lucy</Option>
-                    <Option value="tom">Tom</Option>
+                   {options}
                 </Select>
             </Form.Item>
             <Form.Item
@@ -108,7 +99,7 @@ const AddTaskModal = props => {
                 <Button htmlType="submit" className="btn submit-btn h3 right">
                     Add Task
                 </Button>
-                <Button htmlType="button" className="btn h3 cancel-btn right">
+                <Button htmlType="button" className="btn h3 cancel-btn right" onClick={()=>props.closeModalHandler()}>
                     <CloseOutlined />
                 </Button>
             </Form.Item>

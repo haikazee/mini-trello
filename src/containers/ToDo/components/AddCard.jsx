@@ -53,7 +53,7 @@ const AddCard = props => {
   
 
     const onFinish = values =>{
-        console.log(values);
+        // console.log(values);
         props.addCardHandler(values.title);
     }
 
@@ -87,7 +87,7 @@ const AddCard = props => {
                         <Button htmlType="submit" className="btn submit-btn h3">
                             Add Card
                         </Button>
-                        <Button htmlType="button" className="btn h3 cancel-btn">
+                        <Button htmlType="button" className="btn h3 cancel-btn" onClick={() => props.closeAddCardHandler()}>
                             <CloseOutlined />
                         </Button>
                     </Form.Item>
